@@ -1,47 +1,78 @@
-# Git Best Practices Presentation
+# Title
 
-Welcome to the Git Best Practices Presentation repository! This repository contains materials and resources for a presentation on best practices for using Git. Whether you are a Git beginner or an experienced user, this presentation aims to provide insights and tips to enhance your Git workflow.
+The limit is 50 characters and should be in the imperative, present tense (**«change»**, not **«changed»** or **«changes»**) to be consistent with generated messages from commands like git merge. When we write in the imperative, we tell someone what applying the commit will do.
 
-## Table of Contents
+**Tip**: Your subject should be able to complete the sentence: *If applied, this commit will **&lt;your subject line here&gt;**.*
 
-* [Introduction](#introduction)
-* [Topics Covered](#topics-covered)
-* [Prerequisites](#prerequisites)
-* [Getting Started](#getting-started)
-* [Contributing](#contributing)
-* [License](#license)
+## Challenge
 
-## Introduction
+1. Create an OpenAPI specification file in JSON format to define a basic API with a single endpoint. 
+2. Commit this file with title.
 
-Git is a powerful version control system widely used in software development. However, using Git effectively requires understanding its best practices. This presentation is designed to help you navigate Git with confidence, avoid common pitfalls, and collaborate seamlessly with your team.
+### Resources
 
-## Topics Covered
+You can see an open api specs example below:
 
-* Best practices
-  * Title
-  * Body
-  * Commits
-* Code Review
-  * Requester
-  * Reviewer
-* Conventional Commits
-* Commands
-  * Fixup
-* Tools to help
+```json
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "User API",
+    "version": "1.0.0",
+    "description": "An example OpenAPI Specification for a user-related API."
+  },
+  "paths": {
+    "/user/{userId}": {
+      "get": {
+        "summary": "Get user information by ID",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID of the user to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "example": {
+                  "userId": 123,
+                  "username": "john_doe",
+                  "email": "john@example.com"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "User not found"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
 
-## Prerequisites
+In this example:
 
-Before diving into the presentation, make sure you have Git installed on your machine. Familiarity with basic Git commands is recommended.
+* The API has a single endpoint /user/{userId} that supports the HTTP GET method.
+* The parameters section defines a path parameter userId of type integer.
+* The responses section includes two possible responses: a successful response with HTTP status 200 and a not-found response with HTTP status 404.
+* The JSON content of the successful response is specified in the example field, providing sample data for a user.
 
-## Getting Started
+## Answer
 
-Each branch has a step-by-step guide for applying a specific best practice. Please, follow the README.md file.
-
-## Contributing
-
-If you have suggestions, improvements, or additional best practices to share, feel free to contribute! Fork this repository, make your changes, and submit a pull request. Every contribution is welcome.
-
-## License
-
-This presentation is licensed under the MIT License. Feel free to use, share, and modify it according to your needs.
-
+[Click to see the answers.](ANSWERS.md)
