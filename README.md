@@ -1,47 +1,14 @@
-# Git Best Practices Presentation
+# Commits
 
-Welcome to the Git Best Practices Presentation repository! This repository contains materials and resources for a presentation on best practices for using Git. Whether you are a Git beginner or an experienced user, this presentation aims to provide insights and tips to enhance your Git workflow.
+A commit should be a wrapper for related changes. Don’t mix concerns, keep your commits “atomic”. For example, creating two different components should produce two separate commits. Producing small commits makes it easier for other developers to understand the changes and what context/concern the commit is related to.
 
-## Table of Contents
+Commits should **never crash** the application. For example, you did a refactor that changed the payload. You need to apply this to all codes. This approach is related to having atomic commits. It's the same for tests. You shouldn't create a new commit to adding tests for something you are adding.
 
-* [Introduction](#introduction)
-* [Topics Covered](#topics-covered)
-* [Prerequisites](#prerequisites)
-* [Getting Started](#getting-started)
-* [Contributing](#contributing)
-* [License](#license)
 
-## Introduction
+## Challenge
 
-Git is a powerful version control system widely used in software development. However, using Git effectively requires understanding its best practices. This presentation is designed to help you navigate Git with confidence, avoid common pitfalls, and collaborate seamlessly with your team.
+Currently, our application has one endpoint and its tests. Your challenge is to create two new endpoints for our application. You need to append two new endpoints to the existing open api file and their tests.
 
-## Topics Covered
+## Answer
 
-* Best practices
-  * Title
-  * Body
-  * Commits
-* Code Review
-  * Requester
-  * Reviewer
-* Conventional Commits
-* Commands
-  * Fixup
-* Tools to help
-
-## Prerequisites
-
-Before diving into the presentation, make sure you have Git installed on your machine. Familiarity with basic Git commands is recommended.
-
-## Getting Started
-
-Each branch has a step-by-step guide for applying a specific best practice. Please, follow the README.md file.
-
-## Contributing
-
-If you have suggestions, improvements, or additional best practices to share, feel free to contribute! Fork this repository, make your changes, and submit a pull request. Every contribution is welcome.
-
-## License
-
-This presentation is licensed under the MIT License. Feel free to use, share, and modify it according to your needs.
-
+[Click to see the answers.](ANSWERS.md)
