@@ -1,47 +1,80 @@
-# Git Best Practices Presentation
+# Description (Optional)
 
-Welcome to the Git Best Practices Presentation repository! This repository contains materials and resources for a presentation on best practices for using Git. Whether you are a Git beginner or an experienced user, this presentation aims to provide insights and tips to enhance your Git workflow.
+The most important rule is WHY instead of HOW. Looking at the diff, we know how you made the changes. The important is the motivation for these changes. Make clear the reason that the change was needed. You can provide the previous behaviour to explain why was wrong.
 
-## Table of Contents
+Another rule is to wrap the body at 72 column characters.
 
-* [Introduction](#introduction)
-* [Topics Covered](#topics-covered)
-* [Prerequisites](#prerequisites)
-* [Getting Started](#getting-started)
-* [Contributing](#contributing)
-* [License](#license)
+## Challenge
 
-## Introduction
+[Previously](https://github.com/leidsoncruz/git-presentation/tree/exercise-1_title), you created the API specification file. Now, you will repeat the process and add a commit description.
 
-Git is a powerful version control system widely used in software development. However, using Git effectively requires understanding its best practices. This presentation is designed to help you navigate Git with confidence, avoid common pitfalls, and collaborate seamlessly with your team.
+1. Create an OpenAPI specification file in JSON format to define a basic API with a single endpoint. 
+2. Commit this file with title and description.
 
-## Topics Covered
+### Resources
 
-* Best practices
-  * Title
-  * Body
-  * Commits
-* Code Review
-  * Requester
-  * Reviewer
-* Conventional Commits
-* Commands
-  * Fixup
-* Tools to help
+You can see an open api specs example below:
 
-## Prerequisites
+```json
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "User API",
+    "version": "1.0.0",
+    "description": "An example OpenAPI Specification for a user-related API."
+  },
+  "paths": {
+    "/user/{userId}": {
+      "get": {
+        "summary": "Get user information by ID",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID of the user to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "example": {
+                  "userId": 123,
+                  "username": "john_doe",
+                  "email": "john@example.com"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found",
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "User not found"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
 
-Before diving into the presentation, make sure you have Git installed on your machine. Familiarity with basic Git commands is recommended.
+In this example:
 
-## Getting Started
+* The API has a single endpoint /user/{userId} that supports the HTTP GET method.
+* The parameters section defines a path parameter userId of type integer.
+* The responses section includes two possible responses: a successful response with HTTP status 200 and a not-found response with HTTP status 404.
+* The JSON content of the successful response is specified in the example field, providing sample data for a user.
 
-Each branch has a step-by-step guide for applying a specific best practice. Please, follow the README.md file.
+## Answer
 
-## Contributing
-
-If you have suggestions, improvements, or additional best practices to share, feel free to contribute! Fork this repository, make your changes, and submit a pull request. Every contribution is welcome.
-
-## License
-
-This presentation is licensed under the MIT License. Feel free to use, share, and modify it according to your needs.
-
+[Click to see the answers.](ANSWERS.md)
